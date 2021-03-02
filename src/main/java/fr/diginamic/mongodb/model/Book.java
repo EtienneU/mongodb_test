@@ -8,16 +8,16 @@ import java.util.Objects;
 
 public class Book {
     private ObjectId id;
-    @BsonProperty(value = "name")
-    private String name;
+    @BsonProperty(value = "title")
+    private String title;
     @BsonProperty(value = "releaseDate")
     private LocalDate releaseDate;
 
     public Book() {
     }
 
-    public Book(String name, LocalDate releaseDate) {
-        this.name = name;
+    public Book(String title, LocalDate releaseDate) {
+        this.title = title;
         this.releaseDate = releaseDate;
     }
 
@@ -29,12 +29,12 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public LocalDate getReleaseDate() {
@@ -49,7 +49,7 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
                 ", releaseDate=" + releaseDate +
                 '}';
     }
@@ -60,12 +60,12 @@ public class Book {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
         return id.equals(book.id) &&
-                name.equals(book.name) &&
+                title.equals(book.title) &&
                 releaseDate.equals(book.releaseDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, releaseDate);
+        return Objects.hash(id, title, releaseDate);
     }
 }
